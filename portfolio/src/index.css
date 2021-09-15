@@ -43,6 +43,7 @@ Variables
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
+  --banner-offset: 300px;
 
   /* Discipline colors */
   --clr-web: #3fd1b1;
@@ -191,7 +192,7 @@ nav ul li {
 }
 
 nav button {
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
   text-decoration: none;
   background: inherit;
@@ -219,16 +220,22 @@ nav button {
   animation: button-hover-game 1s;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1150px) {
   nav {
     padding: 0% 0%;
   }
 
   nav button {
-    font-size: 1.25rem;
+    font-size: 1rem;
     border: 0px;
     padding: 0.75rem 0.5rem;
     border-radius: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav button {
+    display: block;
   }
 }
 
@@ -252,5 +259,114 @@ Banner
 }
 
 canvas {
-  background: #1e1e1e;
+  background: var(--clr-black);
+}
+
+/*
+=============== 
+About Card
+===============
+*/
+
+.about-card {
+  position: relative;
+  top: -305px;
+  margin: 0px auto;
+  width: 75vw;
+  display: block;
+  background: var(--clr-black);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  color: var(--clr-white);
+  align-content: center;
+  height: 299px;
+}
+
+.about-card table {
+  text-align: center;
+  margin: auto;
+}
+
+.about-card td {
+  display: inline-block;
+  width: 50%;
+  margin: auto;
+  color: var(--clr-white);
+  vertical-align: middle;
+  text-align: center;
+}
+
+.about-card td article {
+  margin: auto;
+  min-width: 75%;
+}
+
+.about-card td p {
+  color: var(--clr-white);
+  width: 100%;
+  max-height: 100px;
+}
+
+.about-card img {
+  opacity: 100%;
+  display: inline-block;
+  width: 75%;
+  max-width: 200px;
+  margin: 10% auto;
+  border-radius: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .about-card td p {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .about-card td p {
+    font-size: 0.65rem;
+  }
+}
+
+/*
+=============== 
+Info Content
+===============
+*/
+
+.info {
+  width: 75%;
+  margin: auto;
+  display: flex;
+  position: relative;
+  top: -305px;
+}
+
+.info section {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.projects-container li {
+  display: inline-block;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+
+.projects-container {
+  flex: 1;
+}
+
+.skills-container {
+  flex: 1;
+}
+
+.skills li {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  color: var(--clr-web);
 }

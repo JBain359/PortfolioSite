@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <section className="banner">
       {/* <img src={Placeholder} alt="placeholder" /> */}
-      <Sketch />
+      <Sketch></Sketch>
     </section>
   );
 };

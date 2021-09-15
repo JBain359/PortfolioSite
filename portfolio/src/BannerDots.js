@@ -1,5 +1,5 @@
 function drawBanner(p5) {
-  const canvasHeight = 400;
+  const canvasHeight = 300;
   var originX = -window.innerWidth / 2;
   const originY = canvasHeight / -2;
   p5.setup = () => {

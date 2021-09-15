@@ -1,7 +1,7 @@
 import p5 from 'p5';
 import React, { useState, useEffect } from 'react';
 import { ReactP5Wrapper } from 'react-p5-wrapper';
-import drawBanner from './BannerDots';
+import drawBanner from './bannerDots';
 
 const Sketch = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);

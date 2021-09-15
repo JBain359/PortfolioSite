@@ -1,19 +1,22 @@
 import './App.css';
+import { AppProvider } from './context';
 
 // Components
 import Navbar from './Navbar';
 import Banner from './Banner';
 import Info from './Info';
 import ScreenData from './ScreenData';
+import AboutCard from './AboutCard';
 
 function App() {
   return (
-    <>
+    <AppProvider>
       <Navbar></Navbar>
       <Banner></Banner>
+      <AboutCard></AboutCard>
       <Info></Info>
       <ScreenData></ScreenData>
-    </>
+    </AppProvider>
   );
 }
 
