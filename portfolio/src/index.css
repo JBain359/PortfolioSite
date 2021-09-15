@@ -191,12 +191,13 @@ nav ul li {
 }
 
 nav button {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   text-decoration: none;
   background: inherit;
   border: 0px;
   padding: 1.5rem 1rem;
+  margin: 0.5rem;
   border-radius: 0px;
 }
 
@@ -218,15 +219,38 @@ nav button {
   animation: button-hover-game 1s;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   nav {
     padding: 0% 0%;
   }
 
   nav button {
-    font-size: 1rem;
+    font-size: 1.25rem;
     border: 0px;
     padding: 0.75rem 0.5rem;
     border-radius: 0px;
   }
+}
+
+/*
+=============== 
+Banner
+===============
+*/
+
+.banner img {
+  display: block;
+  width: 100vw;
+  position: relative;
+  z-index: -1;
+}
+
+.shadow {
+  box-shadow: inset 1px 1px 30px -10px #000000;
+  width: 100vw;
+  height: 20%;
+}
+
+canvas {
+  background: #1e1e1e;
 }
