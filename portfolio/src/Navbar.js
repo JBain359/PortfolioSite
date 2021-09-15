@@ -1,8 +1,10 @@
 import React from 'react';
 import { useGlobalContext } from './context';
+import { Link, useHistory } from 'react-router-dom';
 
 const Navbar = () => {
-  const { page, setPage, webColor, pixelColor, gameColor } = useGlobalContext();
+  const { page, setPage, webColor, pixelColor, gameColor, goToPixel, goToWeb } =
+    useGlobalContext();
 
   return (
     <nav>
@@ -26,23 +28,23 @@ const Navbar = () => {
               animation: page === 'web' && 'none',
               color: page === 'web' && '#fff',
             }}
+            onClick={page === 'web' || goToWeb}
           >
             Web Dev Portfolio
           </button>
         </li>
         <li>
-          <a href="https://haywirejo.carrd.co/" target="_blank">
-            <button
-              className="pixel-art-btn"
-              style={{
-                background: page === 'pixel' && pixelColor,
-                animation: page === 'pixel' && 'none',
-                color: page === 'pixel' && '#fff',
-              }}
-            >
-              Pixel Art Portfolio
-            </button>
-          </a>
+          <button
+            className="pixel-art-btn"
+            style={{
+              background: page === 'pixel' && pixelColor,
+              animation: page === 'pixel' && 'none',
+              color: page === 'pixel' && '#fff',
+            }}
+            onClick={page === 'pixel' || goToPixel}
+          >
+            Pixel Art Portfolio
+          </button>
         </li>
         <li>
           <a href="https://haywirejo.itch.io/" target="_blank">

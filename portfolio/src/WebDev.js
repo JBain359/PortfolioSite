@@ -1,7 +1,6 @@
 import React from 'react';
-import JoeSplashPic from './assets/JoeSplashPic.png';
 
-const Info = () => {
+const WebDev = () => {
   return (
     <>
       <div className="info">
@@ -37,4 +36,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default WebDev;

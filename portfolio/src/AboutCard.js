@@ -9,15 +9,23 @@ const AboutCard = () => {
     switch (page) {
       case 'web':
         return (
-          <p>
-            Front-end developer working on making modern and functional web apps
-            and sites to assist with everyday tasks. Currently utilizing the
-            MERN and Jamstack. So, what are we building?
-          </p>
+          <>
+            <h2>Joseph Bain</h2>
+            <p>
+              Front-end developer working on making modern and functional web
+              apps and sites to assist with everyday tasks. Currently utilizing
+              the MERN and Jamstack. So, what are we building?
+            </p>
+          </>
         );
         break;
       case 'pixel':
-        return <p>Pixel Artist</p>;
+        return (
+          <>
+            <h2>HaywireJo</h2>
+            <p>Hi there! I'm Jo, a pixel artist and illustrator!</p>{' '}
+          </>
+        );
         break;
       case 'game':
         return <p>Game Developer</p>;
@@ -33,10 +41,7 @@ const AboutCard = () => {
         <table>
           <tr>
             <td>
-              <article>
-                <h2>Joseph Bain</h2>
-                {getDescription()}
-              </article>
+              <article>{getDescription()}</article>
             </td>
             <td>
               <img src={JoeSplashPic} alt="" />
