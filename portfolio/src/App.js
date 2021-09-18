@@ -8,7 +8,6 @@ import Navbar from './Navbar';
 import Banner from './Banner';
 import WebDev from './WebDev';
 import ScreenData from './ScreenData';
-import AboutCard from './AboutCard';
 
 const PixelPortfolio = React.lazy(() => import('./PixelPortfolio'));
 
@@ -18,7 +17,6 @@ function App() {
       <AppProvider>
         <Navbar></Navbar>
         <Banner></Banner>
-        <AboutCard></AboutCard>
 
         <Switch>
           <Route exact path="/">

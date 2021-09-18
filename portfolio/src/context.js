@@ -5,11 +5,25 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [page, setPage] = useState('web');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [scroll, setScroll] = useState(0);
+  const [modalImg, setModalImg] = useState('');
+
   const history = useHistory();
 
   const webColor = '#3fd1b1';
   const pixelColor = '#ffa800';
   const gameColor = '#da2c49';
+
+  const openModal = (source) => {
+    console.log(source);
+    setIsModalOpen(true);
+    setModalImg(source);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const goToWeb = () => {
     setPage('web');
@@ -32,6 +46,10 @@ const AppProvider = ({ children }) => {
         setPage,
         goToPixel,
         goToWeb,
+        openModal,
+        closeModal,
+        modalImg,
+        isModalOpen,
         page,
         webColor,
         pixelColor,

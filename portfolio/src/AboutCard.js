@@ -22,7 +22,7 @@ const AboutCard = () => {
       case 'pixel':
         return (
           <>
-            <h2>HaywireJo</h2>
+            <h3>HaywireJo</h3>
             <p>Hi there! I'm Jo, a pixel artist and illustrator!</p>{' '}
           </>
         );

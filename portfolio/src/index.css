@@ -71,7 +71,18 @@ body {
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
+  overflow-x: hidden;
 }
+
+html:not([data-scroll='0']) {
+  padding-top: 3rem;
+}
+
+html:not([data-scroll='0']) nav {
+  position: fixed;
+  top: 0;
+}
+
 ul {
   list-style-type: none;
 }
@@ -171,6 +182,39 @@ Animations
   }
 }
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes inspect {
+  from {
+    margin: 0rem;
+    z-index: 0;
+  }
+  to {
+    margin: -0.5rem;
+    z-index: 1;
+  }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
 /*
 =============== 
 Navbar
@@ -184,6 +228,7 @@ nav {
   background: var(--clr-white);
   box-shadow: var(--light-shadow);
   padding: 0% 20%;
+  z-index: 10;
 }
 
 nav ul li {
@@ -235,6 +280,7 @@ nav button {
 
 @media screen and (max-width: 600px) {
   nav button {
+    font-size: 1.5vh;
     display: block;
   }
 }
@@ -245,21 +291,9 @@ Banner
 ===============
 */
 
-.banner img {
-  display: block;
-  width: 100vw;
-  position: relative;
-  z-index: -1;
-}
-
-.shadow {
-  box-shadow: inset 1px 1px 30px -10px #000000;
-  width: 100vw;
-  height: 20%;
-}
-
 canvas {
   background: var(--clr-black);
+  position: relative;
 }
 
 /*
@@ -270,16 +304,16 @@ About Card
 
 .about-card {
   position: relative;
-  top: -305px;
-  margin: 0px auto;
+  top: -300px;
+  margin: auto;
   width: 75vw;
   display: block;
   background: var(--clr-black);
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   color: var(--clr-white);
   align-content: center;
-  height: 299px;
+  height: 288px;
 }
 
 .about-card table {
@@ -339,7 +373,8 @@ Info Content
   margin: auto;
   display: flex;
   position: relative;
-  top: -305px;
+  top: -255px;
+  animation: fadein 1.5s;
 }
 
 .info section {
@@ -369,4 +404,118 @@ Info Content
   font-weight: bold;
   border-radius: 1rem;
   color: var(--clr-web);
+}
+
+/*
+=============== 
+Portfolio Gallery
+===============
+*/
+
+.pixel-portfolio {
+  position: relative;
+  top: -255px;
+
+  animation: fadein 1.5s;
+}
+
+.gallery-container {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+.gallery-container ul {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin: 2vh 5vw;
+}
+
+.gallery-item {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 0.5rem;
+}
+
+.gallery-item img {
+  border-radius: 0rem;
+  object-fit: cover;
+  object-position: center;
+  height: auto;
+  width: 100%;
+  max-height: 12rem;
+  transition: all 0.5s ease;
+  box-shadow: var(--light-shadow);
+}
+
+.gallery-item button {
+  flex: 1;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.5s ease;
+}
+
+.gallery-item img:hover {
+  margin: -0.5rem;
+  z-index: 1;
+  box-shadow: var(--light-shadow);
+}
+
+.gallery-item button {
+  background-color: inherit;
+  border-style: none;
+}
+
+/*
+=============== 
+Modal
+===============
+*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+  visibility: hidden;
+  z-index: -1;
+  transition: opacity 1.5s ease-in-out;
+}
+/* OPEN/CLOSE MODAL */
+.show-modal {
+  visibility: visible;
+  z-index: 10;
+  animation: fadein 0.5s;
+}
+.modal-container {
+  background: transparent;
+  border-radius: var(--radius);
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+  margin: auto;
+}
+
+.modal-container img {
+  max-width: 80vw;
+  max-height: 85vh;
+  margin: auto;
+}
+
+.close-modal-btn {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
 }
