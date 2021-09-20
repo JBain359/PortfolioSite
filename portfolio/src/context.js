@@ -4,10 +4,9 @@ import { useHistory } from 'react-router-dom';
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [page, setPage] = useState('web');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [scroll, setScroll] = useState(0);
-  const [modalImg, setModalImg] = useState('');
+  const [modalImgIndex, setModalImgIndex] = useState(0);
+  const [currentGallery, setCurrentGallery] = useState([]);
 
   const history = useHistory();
 
@@ -15,10 +14,12 @@ const AppProvider = ({ children }) => {
   const pixelColor = '#ffa800';
   const gameColor = '#da2c49';
 
-  const openModal = (source) => {
-    console.log(source);
+  const openModal = (index, gallery) => {
+    const keys = Object.keys(gallery);
+
     setIsModalOpen(true);
-    setModalImg(source);
+    setModalImgIndex(index);
+    setCurrentGallery(gallery);
   };
 
   const closeModal = () => {
@@ -26,31 +27,28 @@ const AppProvider = ({ children }) => {
   };
 
   const goToWeb = () => {
-    setPage('web');
     history.push('/');
   };
 
   const goToPixel = () => {
-    setPage('pixel');
     history.push('/pixel');
   };
 
   const goToGame = () => {
-    setPage('game');
     history.push('/game');
   };
 
   return (
     <AppContext.Provider
       value={{
-        setPage,
         goToPixel,
         goToWeb,
         openModal,
         closeModal,
-        modalImg,
+        setCurrentGallery,
+        currentGallery,
+        modalImgIndex,
         isModalOpen,
-        page,
         webColor,
         pixelColor,
         gameColor,

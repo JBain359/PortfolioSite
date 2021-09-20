@@ -3,6 +3,7 @@ function drawBanner(p5) {
   var originX = -window.innerWidth / 2;
   const originY = canvasHeight / -2;
   p5.setup = () => {
+    p5.noStroke();
     p5.createCanvas(window.innerWidth, canvasHeight, p5.WEBGL);
     p5.fill(0);
     p5.rect(originX, originY, window.innerWidth, p5.height);
@@ -13,9 +14,9 @@ function drawBanner(p5) {
 
   p5.draw = () => {
     originX = -window.innerWidth / 2;
+    p5.noStroke();
     p5.resizeCanvas(window.innerWidth, canvasHeight);
     p5.fill(0, 20);
-    p5.stroke(0);
     p5.rect(originX, originY, window.innerWidth, p5.height);
     p5.fill('#fff');
 
@@ -64,6 +65,13 @@ function drawBanner(p5) {
     }
 
     deleter = [];
+
+    //Draw Cursor
+    // p5.noStroke();
+    // p5.rectMode(p5.RADIUS);
+    // p5.fill('#2CFF7A');
+    // p5.circle(p5.mouseX + originX, p5.mouseY + originY, 10, 10);
+    // p5.rectMode(p5.CORNER);
   };
 
   class Dot {

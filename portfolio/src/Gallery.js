@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types';
-import React, { useState, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { useGlobalContext } from './context';
 // import Zoom from 'react-medium-image-zoom';
 // import 'react-medium-image-zoom/dist/styles.css';
 
 const Gallery = ({ galleryPath, galleryName, gallerySub }) => {
-  const { openModal, modalImg } = useGlobalContext();
+  const { openModal, modalImgIndex } = useGlobalContext();
 
   const importAllImages = (r) => {
     let images = {};
@@ -27,7 +26,7 @@ const Gallery = ({ galleryPath, galleryName, gallerySub }) => {
             return (
               <li key={index} className="gallery-item">
                 <Suspense fallback={<div>Loading...</div>}>
-                  <button onClick={() => openModal(images[key].default)}>
+                  <button onClick={() => openModal(index, images)}>
                     <img src={images[key].default} alt={key} />
                   </button>
                 </Suspense>
@@ -36,25 +35,7 @@ const Gallery = ({ galleryPath, galleryName, gallerySub }) => {
           })}
         </ul>
       </div>
-      <ImgModal source={modalImg}></ImgModal>
     </>
-  );
-};
-
-const ImgModal = (source) => {
-  const { isModalOpen, closeModal } = useGlobalContext();
-  return (
-    <div
-      className={`${
-        isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
-      }`}
-    >
-      <button className="close-modal-btn" onClick={closeModal}>
-        <div className="modal-container">
-          <img src={source['source']} alt="" />
-        </div>
-      </button>
-    </div>
   );
 };
 

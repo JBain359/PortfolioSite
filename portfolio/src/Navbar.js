@@ -1,10 +1,11 @@
 import React from 'react';
 import { useGlobalContext } from './context';
-import { Link, useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-  const { page, setPage, webColor, pixelColor, gameColor, goToPixel, goToWeb } =
+  const { webColor, pixelColor, gameColor, goToPixel, goToWeb } =
     useGlobalContext();
+  const location = useLocation();
 
   // The debounce function receives our function as a parameter
   const debounce = (fn) => {
@@ -57,11 +58,11 @@ const Navbar = () => {
             <button
               className="web-dev-btn"
               style={{
-                background: page === 'web' && webColor,
-                animation: page === 'web' && 'none',
-                color: page === 'web' && '#fff',
+                background: location.pathname === '/' && webColor,
+                animation: location.pathname === '/' && 'none',
+                color: location.pathname === '/' && '#fff',
               }}
-              onClick={page === 'web' || goToWeb}
+              onClick={location.pathname === '/' || goToWeb}
             >
               Web Dev Portfolio
             </button>
@@ -70,11 +71,11 @@ const Navbar = () => {
             <button
               className="pixel-art-btn"
               style={{
-                background: page === 'pixel' && pixelColor,
-                animation: page === 'pixel' && 'none',
-                color: page === 'pixel' && '#fff',
+                background: location.pathname === '/pixel' && pixelColor,
+                animation: location.pathname === '/pixel' && 'none',
+                color: location.pathname === '/pixel' && '#fff',
               }}
-              onClick={page === 'pixel' || goToPixel}
+              onClick={location.pathname === '/pixel' || goToPixel}
             >
               Pixel Art Portfolio
             </button>
@@ -84,9 +85,9 @@ const Navbar = () => {
               <button
                 className="game-dev-btn"
                 style={{
-                  background: page === 'game' && gameColor,
-                  animation: page === 'game' && 'none',
-                  color: page === 'game' && '#fff',
+                  background: location.pathname === '/game' && gameColor,
+                  animation: location.pathname === '/game' && 'none',
+                  color: location.pathname === '/game' && '#fff',
                 }}
               >
                 Game Dev Portfolio

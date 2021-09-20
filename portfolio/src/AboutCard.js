@@ -1,33 +1,37 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import JoeSplashPic from './assets/JoeSplashPic.png';
-import { useGlobalContext } from './context';
+import { useLocation } from 'react-router-dom';
 
 const AboutCard = () => {
-  const { page, setPage, webColor, pixelColor, gameColor } = useGlobalContext();
+  const location = useLocation();
 
   const getDescription = () => {
-    switch (page) {
-      case 'web':
+    switch (location.pathname) {
+      case '/':
         return (
           <>
             <h2>Joseph Bain</h2>
             <p>
-              Front-end developer working on making modern and functional web
-              apps and sites to assist with everyday tasks. Currently utilizing
-              the MERN and Jamstack. So, what are we building?
+              Front-end web developer working on making modern and functional
+              web apps and sites to assist with everyday tasks. Making the web
+              prettier and more intuitive one interface at a time.
             </p>
           </>
         );
         break;
-      case 'pixel':
+      case '/pixel':
         return (
           <>
             <h3>HaywireJo</h3>
-            <p>Hi there! I'm Jo, a pixel artist and illustrator!</p>{' '}
+            <p>
+              Hi there! I'm Jo, a pixel artist and illustrator! I have a love
+              and passion for pixel game art, so I create some myself. Hope you
+              enjoy!
+            </p>
           </>
         );
         break;
-      case 'game':
+      case '/game':
         return <p>Game Developer</p>;
         break;
       default:
