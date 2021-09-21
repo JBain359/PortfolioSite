@@ -8,29 +8,31 @@ import Navbar from './Navbar';
 import Banner from './Banner';
 import WebDev from './WebDev';
 import ScreenData from './ScreenData';
-
+import WaitForLoad from './WaitForLoad';
 const PixelPortfolio = React.lazy(() => import('./PixelPortfolio'));
 
 function App() {
   return (
-    <Router>
-      <AppProvider>
-        <Navbar></Navbar>
-        <Banner></Banner>
+    <WaitForLoad>
+      <Router>
+        <AppProvider>
+          <Navbar></Navbar>
+          <Banner></Banner>
 
-        <Switch>
-          <Route exact path="/">
-            <WebDev></WebDev>
-          </Route>
-          <Route path="/pixel">
-            <Suspense fallback={<div>Loading...</div>}>
-              <PixelPortfolio></PixelPortfolio>
-            </Suspense>
-          </Route>
-        </Switch>
-        <ScreenData></ScreenData>
-      </AppProvider>
-    </Router>
+          <Switch>
+            <Route exact path="/">
+              <WebDev></WebDev>
+            </Route>
+            <Route path="/pixel">
+              <Suspense fallback={<div>Loading...</div>}>
+                <PixelPortfolio></PixelPortfolio>
+              </Suspense>
+            </Route>
+          </Switch>
+          <ScreenData></ScreenData>
+        </AppProvider>
+      </Router>
+    </WaitForLoad>
   );
 }
 

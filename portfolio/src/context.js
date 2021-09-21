@@ -46,6 +46,7 @@ const AppProvider = ({ children }) => {
         openModal,
         closeModal,
         setCurrentGallery,
+        setModalImgIndex,
         currentGallery,
         modalImgIndex,
         isModalOpen,
