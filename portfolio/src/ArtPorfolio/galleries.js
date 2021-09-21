@@ -1,16 +1,12 @@
 const GALLERIES = {
   MISC: {
-    path: require.context(
-      './assets/pixelArtwork/MISC',
-      false,
-      /\.(png|jpe?g|svg)$/
-    ),
+    path: require.context('./pixelArtwork/MISC', false, /\.(png|jpe?g|svg)$/),
     name: 'Pixel Artwork',
     subtitle: '',
   },
   Kanto: {
     path: require.context(
-      './assets/pixelArtwork/KantoRedrawn',
+      './pixelArtwork/KantoRedrawn',
       false,
       /\.(png|jpe?g|svg)$/
     ),
@@ -19,7 +15,7 @@ const GALLERIES = {
   },
   FF: {
     path: require.context(
-      './assets/pixelArtwork/FullmetalFantasy',
+      './pixelArtwork/FullmetalFantasy',
       false,
       /\.(png|jpe?g|svg)$/
     ),
@@ -28,7 +24,7 @@ const GALLERIES = {
   },
   Sevii: {
     path: require.context(
-      './assets/pixelArtwork/SeviiBurn',
+      './pixelArtwork/SeviiBurn',
       false,
       /\.(png|jpe?g|svg)$/
     ),

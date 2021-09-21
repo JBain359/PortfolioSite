@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { useGlobalContext } from './context';
+import { useGlobalContext } from '../context';
 
 // import Zoom from 'react-medium-image-zoom';
 // import 'react-medium-image-zoom/dist/styles.css';

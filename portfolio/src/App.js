@@ -4,12 +4,12 @@ import { AppProvider } from './context';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Components
-import Navbar from './Navbar';
-import Banner from './Banner';
-import WebDev from './WebDev';
-import ScreenData from './ScreenData';
-import WaitForLoad from './WaitForLoad';
-const PixelPortfolio = React.lazy(() => import('./PixelPortfolio'));
+import Navbar from './Nav-Banner/Navbar';
+import Banner from './Nav-Banner/Banner';
+import WebDev from './WebDev/WebDev';
+import ScreenData from './Helpers/ScreenData';
+import WaitForLoad from './Helpers/WaitForLoad';
+const PixelPortfolio = React.lazy(() => import('./ArtPorfolio/PixelPortfolio'));
 
 function App() {
   return (

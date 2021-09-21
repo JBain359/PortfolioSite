@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useGlobalContext } from './context';
-import Left from './assets/ic-chevron-left@4x.jpg';
+import { useGlobalContext } from '../context';
 
 const ImgModal = (source) => {
   const {

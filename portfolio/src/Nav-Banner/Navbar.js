@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGlobalContext } from './context';
+import { useGlobalContext } from '../context';
 import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {

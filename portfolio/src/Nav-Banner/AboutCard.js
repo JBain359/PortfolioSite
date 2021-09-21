@@ -1,5 +1,5 @@
 import React from 'react';
-import JoeSplashPic from './assets/JoeSplashPic.png';
+import JoeSplashPic from '../assets/JoeSplashPic.png';
 import { useLocation } from 'react-router-dom';
 
 const AboutCard = () => {
