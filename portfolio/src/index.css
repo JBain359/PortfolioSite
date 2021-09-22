@@ -112,7 +112,7 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-grey-5);
+  color: var(--clr-grey-1);
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -211,6 +211,17 @@ Animations
   }
 }
 
+@keyframes inspect-project {
+  from {
+    position: relative;
+    top: 0px;
+  }
+  to {
+    position: relative;
+    top: -10px;
+  }
+}
+
 .fade-in-section {
   opacity: 0;
   transform: translateY(10vh);
@@ -288,6 +299,16 @@ nav button {
 }
 
 @media screen and (max-width: 600px) {
+  nav li {
+    display: block;
+  }
+  nav button {
+    font-size: 1.5vh;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
   nav button {
     font-size: 1.5vh;
     display: block;
@@ -301,8 +322,15 @@ Banner
 */
 
 canvas {
+  width: 100vw;
   background: var(--clr-black);
   position: relative;
+}
+
+@media screen and (max-width: 500px) {
+  canvas {
+    width: 100vw;
+  }
 }
 
 /*
@@ -373,7 +401,7 @@ About Card
 
 /*
 =============== 
-Info Content
+WebDev Content
 ===============
 */
 
@@ -381,24 +409,15 @@ Info Content
   width: 75%;
   margin: auto;
   display: flex;
-  position: relative;
-  top: -255px;
+  flex-direction: row-reverse;
+  margin-top: -255px;
+  padding-bottom: 2rem;
   animation: fadein 1.5s;
 }
 
 .info section {
   padding: 1.5rem;
   text-align: center;
-}
-
-.projects-container li {
-  display: inline-block;
-  padding: 1rem;
-  margin: 0.5rem;
-}
-
-.projects-container {
-  flex: 1;
 }
 
 .skills-container {
@@ -411,8 +430,129 @@ Info Content
   padding: 1rem;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 1rem;
   color: var(--clr-web);
+  background-color: var(--clr-white);
+  box-shadow: var(--light-shadow);
+}
+
+@media screen and (max-width: 500px) {
+  .info {
+    display: block;
+    flex-direction: row;
+  }
+}
+
+/*
+=============== 
+Web Project Cards
+===============
+*/
+
+.projects-container {
+  flex: 1;
+}
+
+.projects-container ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.web-project {
+  display: inline-block;
+  background-color: var(--clr-white);
+  box-shadow: var(--light-shadow);
+  padding: 1rem;
+  margin: 0.5rem;
+  flex: 1;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.web-project:hover {
+  /* margin: 0px -0.5rem; */
+  border: 0px;
+  border-bottom: 5px;
+  border-style: solid;
+  border-color: var(--clr-web);
+}
+
+.web-project img {
+  width: 15vw;
+  min-width: 100px;
+  max-width: 250px;
+}
+
+.web-project a {
+  font-style: oblique;
+  padding: 1rem;
+  margin: 1rem;
+  color: var(--clr-grey-1);
+  transition: all 0.5s ease;
+}
+
+.web-project a:hover {
+  background-color: var(--clr-web);
+  color: var(--clr-white);
+}
+
+/*
+=============== 
+Game Project Cards
+===============
+*/
+
+.game-project {
+  display: inline-block;
+  background-color: var(--clr-white);
+  box-shadow: var(--light-shadow);
+  padding: 2rem;
+  margin: 0.5rem;
+  flex: 1;
+  position: relative;
+  transition: all 0.5s ease;
+  text-align: right;
+}
+
+.game-project:hover {
+  /* margin: 0px -0.5rem; */
+  border: 0px;
+  border-bottom: 5px;
+  border-style: solid;
+  border-color: var(--clr-game);
+}
+
+.game-project img {
+  float: left;
+  width: 30vw;
+  height: 100%;
+  min-width: 250px;
+  margin: 0px 1rem;
+}
+.game-project p {
+  padding: auto 1rem;
+}
+
+.game-project a {
+  font-style: oblique;
+  padding: 1rem;
+  color: var(--clr-grey-1);
+  transition: all 0.5s ease;
+}
+
+.game-project a:hover {
+  background-color: var(--clr-game);
+  color: var(--clr-white);
+}
+
+@media screen and (max-width: 750px) {
+  .game-project {
+    text-align: center;
+  }
+  .game-project img {
+    width: 30vw;
+    min-width: 0px;
+    float: none;
+  }
 }
 
 /*
@@ -422,8 +562,8 @@ Portfolio Gallery
 */
 
 .pixel-portfolio {
-  position: relative;
-  top: -255px;
+  margin-top: -255px;
+  padding-bottom: 2rem;
   animation: fadein 1.5s;
 }
 
@@ -579,4 +719,32 @@ Modal
   position: absolute;
   left: 1rem;
   top: 50vh;
+}
+
+/*
+=============== 
+Footer
+===============
+*/
+
+footer {
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+footer li {
+  display: inline-block;
+  margin: 0.5rem 1rem;
+}
+
+svg {
+  fill: var(--clr-white);
+  transition: all 0.5s linear;
+}
+
+svg:hover {
+  fill: var(--clr-web);
 }

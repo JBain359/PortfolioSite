@@ -32,7 +32,16 @@ const AboutCard = () => {
         );
         break;
       case '/game':
-        return <p>Game Developer</p>;
+        return (
+          <>
+            <h2>Joseph Bain</h2>
+            <p>
+              2D Game Developer working on cute and fun games. Working in Unity,
+              specializing in game art, programming, and design. Thanks in
+              advance for playing my games!
+            </p>
+          </>
+        );
         break;
       default:
         return <p>Regular Person</p>;

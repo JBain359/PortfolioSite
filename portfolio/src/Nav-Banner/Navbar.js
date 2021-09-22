@@ -3,7 +3,7 @@ import { useGlobalContext } from '../context';
 import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-  const { webColor, pixelColor, gameColor, goToPixel, goToWeb } =
+  const { webColor, pixelColor, gameColor, goToPixel, goToWeb, goToGame } =
     useGlobalContext();
   const location = useLocation();
 
@@ -62,7 +62,7 @@ const Navbar = () => {
                 animation: location.pathname === '/' && 'none',
                 color: location.pathname === '/' && '#fff',
               }}
-              onClick={location.pathname === '/' || goToWeb}
+              onClick={goToWeb}
             >
               Web Dev Portfolio
             </button>
@@ -75,24 +75,23 @@ const Navbar = () => {
                 animation: location.pathname === '/pixel' && 'none',
                 color: location.pathname === '/pixel' && '#fff',
               }}
-              onClick={location.pathname === '/pixel' || goToPixel}
+              onClick={goToPixel}
             >
               Pixel Art Portfolio
             </button>
           </li>
           <li>
-            <a href="https://haywirejo.itch.io/" target="_blank">
-              <button
-                className="game-dev-btn"
-                style={{
-                  background: location.pathname === '/game' && gameColor,
-                  animation: location.pathname === '/game' && 'none',
-                  color: location.pathname === '/game' && '#fff',
-                }}
-              >
-                Game Dev Portfolio
-              </button>
-            </a>
+            <button
+              className="game-dev-btn"
+              style={{
+                background: location.pathname === '/game' && gameColor,
+                animation: location.pathname === '/game' && 'none',
+                color: location.pathname === '/game' && '#fff',
+              }}
+              onClick={goToGame}
+            >
+              Game Dev Portfolio
+            </button>
           </li>
         </ul>
       </nav>

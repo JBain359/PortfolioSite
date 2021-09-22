@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const AppContext = React.createContext();
 
@@ -9,6 +9,7 @@ const AppProvider = ({ children }) => {
   const [currentGallery, setCurrentGallery] = useState([]);
 
   const history = useHistory();
+  const location = useLocation();
 
   const webColor = '#3fd1b1';
   const pixelColor = '#ffa800';
@@ -27,15 +28,21 @@ const AppProvider = ({ children }) => {
   };
 
   const goToWeb = () => {
-    history.push('/');
+    if (location.pathname !== '/') {
+      history.push('/');
+    }
   };
 
   const goToPixel = () => {
-    history.push('/pixel');
+    if (location.pathname !== '/pixel') {
+      history.push('/pixel');
+    }
   };
 
   const goToGame = () => {
-    history.push('/game');
+    if (location.pathname !== '/game') {
+      history.push('/game');
+    }
   };
 
   return (
@@ -43,6 +50,7 @@ const AppProvider = ({ children }) => {
       value={{
         goToPixel,
         goToWeb,
+        goToGame,
         openModal,
         closeModal,
         setCurrentGallery,

@@ -17,7 +17,7 @@ const Sketch = () => {
       // cleanup
       window.removeEventListener('resize', checkSize);
     };
-  }, [screenWidth]);
+  }, [window.innerWidth]);
 
   return <ReactP5Wrapper sketch={drawBanner} />;
 };

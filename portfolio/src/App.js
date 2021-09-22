@@ -3,12 +3,15 @@ import React, { Suspense } from 'react';
 import { AppProvider } from './context';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+//Helpers
+import WaitForLoad from './Helpers/WaitForLoad';
+
 // Components
 import Navbar from './Nav-Banner/Navbar';
 import Banner from './Nav-Banner/Banner';
 import WebDev from './WebDev/WebDev';
-import ScreenData from './Helpers/ScreenData';
-import WaitForLoad from './Helpers/WaitForLoad';
+import GameDev from './GameDev/GameDev';
+import Footer from './Footer/Footer';
 const PixelPortfolio = React.lazy(() => import('./ArtPorfolio/PixelPortfolio'));
 
 function App() {
@@ -28,8 +31,11 @@ function App() {
                 <PixelPortfolio></PixelPortfolio>
               </Suspense>
             </Route>
+            <Route path="/game">
+              <GameDev></GameDev>
+            </Route>
           </Switch>
-          <ScreenData></ScreenData>
+          <Footer></Footer>
         </AppProvider>
       </Router>
     </WaitForLoad>
