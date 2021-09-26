@@ -6,7 +6,9 @@ const Banner = () => {
   return (
     <section className="banner">
       {/* <img src={Placeholder} alt="placeholder" /> */}
-      <Sketch></Sketch>
+      <div className="sketch-container">
+        <Sketch></Sketch>
+      </div>
       <AboutCard></AboutCard>
     </section>
   );

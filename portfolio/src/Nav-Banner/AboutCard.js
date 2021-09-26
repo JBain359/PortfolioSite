@@ -52,14 +52,16 @@ const AboutCard = () => {
     <>
       <section className="about-card">
         <table>
-          <tr>
-            <td>
-              <article>{getDescription()}</article>
-            </td>
-            <td>
-              <img src={JoeSplashPic} alt="" />
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>
+                <article>{getDescription()}</article>
+              </td>
+              <td>
+                <img src={JoeSplashPic} alt="" />
+              </td>
+            </tr>
+          </tbody>
         </table>
       </section>
     </>

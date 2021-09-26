@@ -1,23 +1,30 @@
 function drawBanner(p5) {
+  var canvasWidth = window.innerWidth;
   const canvasHeight = 300;
-  var originX = -window.innerWidth / 2;
+  var originX = -canvasWidth / 2;
   const originY = canvasHeight / -2;
+
   p5.setup = () => {
     p5.noStroke();
-    p5.createCanvas(window.innerWidth, canvasHeight, p5.WEBGL);
+    p5.createCanvas(canvasWidth, canvasHeight, p5.WEBGL);
     p5.fill(0);
-    p5.rect(originX, originY, window.innerWidth, p5.height);
+    p5.rect(originX, originY, canvasWidth, p5.height);
+    console.log('my width is ' + canvasWidth);
+  };
+
+  p5.windowResized = () => {
+    canvasWidth = window.innerWidth;
   };
 
   const dots = [];
   var deleter = [];
 
   p5.draw = () => {
-    originX = -window.innerWidth / 2;
+    originX = -canvasWidth / 2;
     p5.noStroke();
-    p5.resizeCanvas(window.innerWidth, canvasHeight);
+    p5.resizeCanvas(canvasWidth, canvasHeight);
     p5.fill(0, 20);
-    p5.rect(originX, originY, window.innerWidth, p5.height);
+    p5.rect(originX, originY, canvasWidth, p5.height);
     p5.fill('#fff');
 
     const fireRate = 0.05;

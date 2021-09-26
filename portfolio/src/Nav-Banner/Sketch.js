@@ -4,20 +4,9 @@ import { ReactP5Wrapper } from 'react-p5-wrapper';
 import drawBanner from './bannerDots';
 
 const Sketch = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  const checkSize = () => {
-    setScreenWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', checkSize);
-    drawBanner(p5);
-    return () => {
-      // cleanup
-      window.removeEventListener('resize', checkSize);
-    };
-  }, [window.innerWidth]);
+  // useEffect(() => {
+  //   drawBanner(p5);
+  // }, [window.innerWidth]);
 
   return <ReactP5Wrapper sketch={drawBanner} />;
 };

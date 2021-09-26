@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Helpers
 import WaitForLoad from './Helpers/WaitForLoad';
+import LoadingScreen from './Helpers/LoadingScreen';
 
 // Components
 import Navbar from './Nav-Banner/Navbar';
@@ -12,6 +13,7 @@ import Banner from './Nav-Banner/Banner';
 import WebDev from './WebDev/WebDev';
 import GameDev from './GameDev/GameDev';
 import Footer from './Footer/Footer';
+
 const PixelPortfolio = React.lazy(() => import('./ArtPorfolio/PixelPortfolio'));
 
 function App() {
@@ -19,47 +21,26 @@ function App() {
     <WaitForLoad>
       <Router>
         <AppProvider>
-          <Navbar></Navbar>
-          <Banner></Banner>
+          <Navbar />
+          <Banner />
 
           <Switch>
             <Route exact path="/">
-              <WebDev></WebDev>
+              <WebDev />
             </Route>
             <Route path="/pixel">
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LoadingScreen />}>
                 <PixelPortfolio></PixelPortfolio>
               </Suspense>
             </Route>
             <Route path="/game">
-              <GameDev></GameDev>
+              <GameDev />
             </Route>
           </Switch>
-          <Footer></Footer>
+          <Footer />
         </AppProvider>
       </Router>
     </WaitForLoad>
-  );
-}
-
-function BoilerPlate() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="" className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
   );
 }
 
