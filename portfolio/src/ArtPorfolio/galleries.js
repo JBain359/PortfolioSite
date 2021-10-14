@@ -26,7 +26,7 @@ const GALLERIES = {
     path: require.context(
       './pixelArtwork/SeviiBurn',
       false,
-      /\.(png|jpe?g|svg)$/
+      /\.(png|jpe?g|svg|gif)$/
     ),
     name: 'Sevii Burn',
     subtitle: 'What if Pokémon had a 2D action-adventure spin-off?',
