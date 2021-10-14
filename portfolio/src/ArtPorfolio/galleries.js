@@ -31,6 +31,33 @@ const GALLERIES = {
     name: 'Sevii Burn',
     subtitle: 'What if Pokémon had a 2D action-adventure spin-off?',
   },
+  MMAnimations: {
+    path: require.context(
+      './pixelArtwork/Animation/ManekiMancer',
+      false,
+      /\.(png|jpe?g|svg|gif)$/
+    ),
+    name: 'Animations',
+    subtitle: 'Maneki Mancer',
+  },
+  FMAnimations: {
+    path: require.context(
+      './pixelArtwork/Animation/FortMortem',
+      false,
+      /\.(png|jpe?g|svg|gif)$/
+    ),
+    name: '',
+    subtitle: 'Fort Mortem',
+  },
+  MiscAnimations: {
+    path: require.context(
+      './pixelArtwork/Animation/Misc',
+      false,
+      /\.(png|jpe?g|svg|gif)$/
+    ),
+    name: '',
+    subtitle: 'Misc',
+  },
 };
 
 export default GALLERIES;

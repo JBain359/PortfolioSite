@@ -14,7 +14,6 @@ const WebDev = () => {
             <li>Javascript</li>
             <li>React.js</li>
             <li>Node.js</li>
-            <li>Express.js</li>
             <li>Git</li>
             <li>AWS</li>
           </ul>
