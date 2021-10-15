@@ -506,6 +506,15 @@ Game Project Cards
 ===============
 */
 
+.game-projects-container ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.game-projects-container ul li {
+  min-width: 100%;
+}
+
 .game-project {
   display: inline-block;
   background-color: var(--clr-white);
@@ -535,6 +544,7 @@ Game Project Cards
 }
 .game-project p {
   padding: auto 1rem;
+  max-width: 50vw;
 }
 
 .game-project a {
@@ -553,6 +563,7 @@ Game Project Cards
   .game-project {
     text-align: center;
   }
+
   .game-project img {
     width: 30vw;
     min-width: 0px;
