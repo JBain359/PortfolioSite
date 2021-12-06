@@ -1,6 +1,6 @@
 import React from 'react';
 import screenshot from './Screenshots/SS1.PNG';
-import screenshot2 from './Screenshots/ManekiMancerMockup.png';
+import screenshot2 from './Screenshots/MMScreenshotRoyalCatyard.PNG';
 import ProjectCard from '../Helpers/ProjectCard';
 
 const GameDev = () => {
@@ -32,7 +32,8 @@ const GameDev = () => {
                 description="Arcade style platformer where you collect coins and use them to defeat enemies and advance through stages"
                 links={[
                   {
-                    name: 'In Development',
+                    name: 'Play Now',
+                    href: 'https://haywirejo.itch.io/maneki-mancer',
                   },
                 ]}
               ></ProjectCard>
