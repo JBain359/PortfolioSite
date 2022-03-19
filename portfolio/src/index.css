@@ -384,7 +384,6 @@ About Card
 }
 
 .about-card img {
-  opacity: 100%;
   display: inline-block;
   width: 75%;
   max-width: 200px;

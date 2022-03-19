@@ -58,7 +58,7 @@ const AboutCard = () => {
                 <article>{getDescription()}</article>
               </td>
               <td>
-                <img src={JoeSplashPic} alt="" />
+                <img src={JoeSplashPic} alt="Joe Splash Pic" />
               </td>
             </tr>
           </tbody>

@@ -13,6 +13,15 @@ const GALLERIES = {
     name: 'Kanto Redrawn',
     subtitle: 'Same palette, new imagination, no limits.',
   },
+  Sonic: {
+    path: require.context(
+      './pixelArtwork/SonicBattleHeroes',
+      false,
+      /\.(png|jpe?g|svg)$/
+    ),
+    name: 'Sonic Battle Heroes',
+    subtitle: 'Sonic Heroes x Sonic Battle',
+  },
   FF: {
     path: require.context(
       './pixelArtwork/FullmetalFantasy',
