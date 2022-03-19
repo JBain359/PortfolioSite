@@ -22,7 +22,7 @@ const AboutCard = () => {
       case '/pixel':
         return (
           <>
-            <h3>HaywireJo</h3>
+            <h2>HaywireJo</h2>
             <p>
               Hi there! I'm Jo, a pixel artist and illustrator! I have a love
               and passion for pixel game art, so I create some myself. Hope you
@@ -34,7 +34,7 @@ const AboutCard = () => {
       case '/game':
         return (
           <>
-            <h2>Joseph Bain</h2>
+            <h2>HaywireJo</h2>
             <p>
               2D Game Developer working on cute and fun games. Working in Unity,
               specializing in game art, programming, and design. Thanks in
